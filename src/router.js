@@ -24,7 +24,11 @@ const routes = [
         component: () => import('./components/Home.vue'),
     },
     {
-        path: "/:404",
+        path: '/:pathMatch(.*)*',
+        redirect: '/404'
+    },
+    {
+        path: "/404",
         component: () => import('./components/Error.vue'),
     },
 ];
